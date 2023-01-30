@@ -1,0 +1,9 @@
+nav {
+  height: 120px;
+  width: 100%;
+  background-color: #4056a1;
+  color: #FFFFFF;
+  padding: 1em;
+  display: flex;
+  align-items: flex-end;
+}
