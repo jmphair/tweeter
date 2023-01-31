@@ -5,5 +5,14 @@ nav {
   color: #FFFFFF;
   padding: 1em;
   display: flex;
-  align-items: flex-end;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav .nav-text-bold {
+  font-weight: bold;
+}
+
+nav .nav-text-light {
+  font-weight: lighter;
 }
