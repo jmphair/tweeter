@@ -16,9 +16,16 @@ form {
 
 .tweet-text {
   display: flex;
-  
-  border-style: hidden;
+  flex-direction: column;
+  border: none;
   border-bottom: 6px solid #545149;
+}
+
+textarea {
+  display: flex;
+  flex-direction: column;
+  border: none;
+  background-color: transparent;
 }
 
 .under-tweet {
