@@ -22,6 +22,7 @@
 
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
 
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -55,27 +56,18 @@
 
     <!-- Page-specific (main) content here -->
     <main class="container">
-      <h1>Bluth Ipsum</h1>
-      <h2>If you're an Arrested Development fan than this lorem ipsum generator is for you. Make your project stand out with ramblings big and small from Michael Bluth.</h2>
-      <p>Look at us, crying like a bunch of girls on the last day of camp. Stack the chafing dishes outside by the mailbox. I'm on the job. Daddy horny, Michael. Wine only turns to alcohol if you let it sit. Uncle Gob… was Aunt Lindsay ever pregnant? Yeah, sure, dozens of times. Hey, it was one night of wild passion! And yet you didn't notice her body? I like to look in the mirror.
-
-        She's always got to wedge herself in the middle of us so that she can control everything. Yeah. Mom's awesome. I'm foolish and I'm funny and I'm needy. Am I needy? Are you sure I'm not needy? 'Cause I feel needy sometimes. NO TOUCHING! I know, I just call her Annabelle cause she's shaped like a… she's the belle of the ball!
-        
-        Ann, you need to decide whether you want a man or a boy. I know how I'd answer. That's the first time we were in the shower since our honeymoon. And this time, no tears. I may have committed some light treason. ¡Soy loco por los Cornballs! We'll have to find something to do so that people can look at you without wanting to kill themselves. I know, I just call her Annabelle cause she's shaped like a…she's the belle of the ball!
-        
-        YOU'RE the Chiclet! Not me. Caw ca caw, caw ca caw, caw ca caw! It's a jetpack, Michael. What could go wrong?
-        
-        However, she mistook the drowsy eye alcohol warning for a winking eye alcohol suggestion. Are you aware of this? Coming soon. Indeed. They frame my junk. Wine only turns to alcohol if you let it sit. I need a tea to give my dingle less tingle. Michael, you are not quite the ladies man I had pictured. Hopefully, we will remedy that when we are in the spa spreading body chocolate on each other.
-        
-        Say something that will terrify me. Lindsay: F*** me. Tobias: No, that didn't do it. A trick is something a whore does for money…or candy. … or cocaine. It's Sunday, but screw it — juice box time. You need to do more with Rita. Believe me, I'd like to. There's unlimited juice? This party is gonna be off the hook. One of the guys told me to take my head out of my BOTTOM and get back to work…my BOTTOM! [Stabbing Gob] White power! Gob: I'm white!
-        
-        Oh please. They didn't sneak into this country to be your friends. I'm not a prostitute. Michael: Then I shall let you live! Chaw-chee, chaw-chee chaw-chee! Coo coo ca cha! Ah coodle doodle do Caw ca caw, caw ca caw. After all, why should you go to jail for a crime somebody else noticed?
-        
-        What have we always said is the most important thing? Talk you off what, Pop Pop? I'm gonna build me an airport, put my name on it. Why, Michael? So you can fly away from your feelings? Hey, maybe you could pop a tent outside with your cousin Maeby… it'd be a good chance to rub off on her. Buster, what are you doing with mother's rape-horn? In the mid '90s, Tobias formed a folk music band with Lindsay and Maebe which he called Dr. Funke's 100 Percent Natural Good Time Family Band Solution. The group was underwritten by the Natural Food Life Company, a division of Chem-Grow, an Allen Crayne acqusition, which was part of the Squimm Group. Their motto was simple: We keep you alive.
-        
-        My brother wasn't optimistic it could be done, but I didn't take "wasn't optimistic it could be done" for an answer. Excuse me while I circumvent you. The old reach-around. I'm in Vegas this week and would like to point out the Blue Man Group is *actually* hiring. The support group? I run a pretty tight ship around here. With a pool table. Maybe it was the other George Michael. You know, the singer-songwriter. I've used one adjective to describe myself. What is it? This objectification of women has to stop. It's just Mom and whores. ♪♪ And the thought of rubbin' you is getting so exciting. Sky rockets in flight! Afternoon delight! ♪♪
-        
-        Well, they got the Asian right… "hotties" might be a stretch. I deceived you, mom. Tricked makes it sound like we have a playful relationship. Taste the happy, Michael! Taste it!</p>
+      <section class="new-tweet">
+        <h2>Compose Tweet</h2>
+        <form action="/tweets" method="POST">
+          <label for="tweet-text">What are you humming about?</label>
+          <textarea name="text" id="tweet-text"></textarea>
+          <div>
+            <button type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+      </section>
     </main>
+    <footer></footer>
   </body>
 </html>
