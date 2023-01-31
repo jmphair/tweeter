@@ -3,9 +3,10 @@ $(document).ready(function() {
   $("#tweet-text").on('input', function() {
     
     let countLength = $(this).val().length;
+    // console.log(countLength);
+    // I don't know how to use 'this' instead of .counter... ask in break-out/lecture/mentor?
+    $('.counter').html(140 - countLength);
 
-    console.log(countLength);
-  
   });
 
 });
