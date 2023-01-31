@@ -6,11 +6,11 @@ $(document).ready(function() {
 
     // I don't know how to use 'this' instead of .counter... ask in break-out/lecture/mentor?
     $('.counter').html(140 - countLength);
-
-    // strangely stopped return negative values when I tried to do the next thing... find out why after
     
-    if (countLength < 0) {
-
+    if (countLength > 140) {
+      $('.counter').css('color', 'red');
+    } else {
+      $('.counter').css('color', '#545149')
     }
   
   });
