@@ -1,0 +1,18 @@
+header {
+  height: 700px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #dde4f0;
+  background-image: url("https://www.transparenttextures.com/patterns/low-contrast-linen.png");
+}
+
+header .header-text-bold {
+  font-weight: bold;
+}
+
+header .header-text-light {
+  font-weight: lighter;
+}
