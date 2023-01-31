@@ -43,15 +43,11 @@
     </nav>
 
     <header>
-      <div>
           <img src="/images/profile-hex.png"> 
-      </div>
-      <div>
           <h2>
             <span class="header-text-bold">Queenie</span>
             <span class="header-text-light">Phair</span>
           </h2>
-      </div>
     </header>
 
     <!-- Page-specific (main) content here -->
@@ -59,15 +55,22 @@
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
         <form action="/tweets" method="POST">
-          <label for="tweet-text">What are you humming about?</label>
-          <textarea name="text" id="tweet-text"></textarea>
-          <div>
+          <div class="tweet-text">
+            <label for="tweet-text">What are you humming about?</label>
+            <textarea name="text" id="tweet-text"></textarea>
+          </div>
+          <div class="under-tweet">
             <button type="submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
         </form>
       </section>
     </main>
-    <footer></footer>
+    <footer>
+      <br>
+      <br>
+      <br>
+      <br>
+    </footer>
   </body>
 </html>

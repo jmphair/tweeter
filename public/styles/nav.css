@@ -10,10 +10,10 @@ nav {
   position: fixed
 }
 
-nav .nav-text-bold {
+.nav-text-bold {
   font-weight: bold;
 }
 
-nav .nav-text-light {
+.nav-text-light {
   font-weight: lighter;
 }
