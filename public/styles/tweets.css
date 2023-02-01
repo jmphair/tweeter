@@ -1,6 +1,9 @@
 #tweets-container {
   width: 100%;
-  box-shadow: #545149;
+}
+
+#tweets-container:hover {
+  box-shadow: 5px 5px 5px #545149;
 }
 
 article.tweet {
