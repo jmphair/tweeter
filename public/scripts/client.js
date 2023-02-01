@@ -76,22 +76,16 @@ const renderTweets = function (tweets) {
   }
 };
 
+////////// AJAX POST //////////
+
+
+
 
 ////////// DOCUMENT READY FUNCTION //////////
 // seperate as per tip from Vasiliy, can add in the function calls here
 $(() => {
-  
-  // // createTweetElement TEST
-  // const $tweet = createTweetElement(tweetData);
-  // console.log($tweet);
-  // $("#tweets-container").append($tweet);
-  
-  // renderTweets TEST
-  // const $tweet = renderTweets(data);
-  // console.log($tweet);
-  // $("#tweets-container").append($tweet);
 
-  // Call the function
+  // Call the functions
   renderTweets(data);
 
 });
