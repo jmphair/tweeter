@@ -81,14 +81,17 @@ const renderTweets = function (tweets) {
 // seperate as per tip from Vasiliy, can add in the function calls here
 $(() => {
   
-  const $tweet = renderTweets(data);
+  // // createTweetElement TEST
+  // const $tweet = createTweetElement(tweetData);
+  // console.log($tweet);
+  // $("#tweets-container").append($tweet);
+  
+  // renderTweets TEST
+  // const $tweet = renderTweets(data);
+  // console.log($tweet);
+  // $("#tweets-container").append($tweet);
 
-  // Test / driver code (temporary)
-  
-  // to see what it looks like
-  console.log($tweet);
-  
-  // to add it to the page so we can make sure it's got all the right elements, classes, etc.
-  $("#tweets-container").append($tweet);
+  // Call the function
+  renderTweets(data);
 
 });

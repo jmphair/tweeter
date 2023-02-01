@@ -2,20 +2,28 @@
   width: 100%;
 }
 
-#tweets-container:hover {
+/* #tweets-container:hover {
   box-shadow: 5px 5px 5px #b6b5b3ec;
   -webkit-transform: scale(1.01);
   transform: scale(1.01);
   cursor: pointer;
-}
+} */
 
 article.tweet {
   width: 100%;
+  margin-bottom: 0.5em;
   padding: 0.5em;
   display: flex;
   flex-direction: column;
   align-content: center;
   border: 6px solid #545149;
+}
+
+article.tweet:hover {
+  box-shadow: 5px 5px 5px #b6b5b3ec;
+  -webkit-transform: scale(1.01);
+  transform: scale(1.01);
+  cursor: pointer;
 }
 
 article.tweet header {
