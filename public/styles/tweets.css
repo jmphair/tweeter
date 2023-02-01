@@ -53,6 +53,18 @@ article.tweet footer {
   align-items: center;
 }
 
+#flag:hover {
+  color: darkgoldenrod;
+}
+
+#retweet:hover {
+  color: darkgoldenrod;
+}
+
+#heart:hover {
+  color: darkgoldenrod;
+}
+
 .tweet-text {
   display: flex;
   width: 100%;
