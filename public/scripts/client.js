@@ -16,7 +16,7 @@ const tweetData = {
   created_at: 1461116232227,
 };
 
-const createTweetElement = function (tweet) {
+const createTweetElement = function(tweet) {
   const $tweet = `
   <article class="tweet">
 
