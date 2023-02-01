@@ -8,6 +8,7 @@
 ////////// CREATE TWEET ELEMENT //////////
 // This function creates the tweet that appears in the 'tweets-container'
 const createTweetElement = function(tweet) {
+  const timePassed = timeago.format(tweet.created_at);  
   const $tweet = `
   <article class="tweet">
 
@@ -27,7 +28,7 @@ const createTweetElement = function(tweet) {
 
       <footer>
       <div class="tweet-footer-left">
-        <p>${tweet.created_at}</p>
+        <p>${timePassed}</p>
       </div>
         <div class="tweet-footer-right">
           <i id="flag" class="fa-solid fa-flag"></i>
