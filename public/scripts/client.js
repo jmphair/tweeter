@@ -4,33 +4,6 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
-////////// TWEET DATA //////////
-// Fake data taken from initial-tweets.json
-// const data = [
-//   {
-//     "user": {
-//       "name": "Newton",
-//       "avatars": "https://i.imgur.com/73hZDYK.png"
-//       ,
-//       "handle": "@SirIsaac"
-//     },
-//     "content": {
-//       "text": "If I have seen further it is by standing on the shoulders of giants"
-//     },
-//     "created_at": 1461116232227
-//   },
-//   {
-//     "user": {
-//       "name": "Descartes",
-//       "avatars": "https://i.imgur.com/nlhLi3I.png",
-//       "handle": "@rd" },
-//     "content": {
-//       "text": "Je pense , donc je suis"
-//     },
-//     "created_at": 1461113959088
-//   }
-// ]
-
 
 ////////// CREATE TWEET ELEMENT //////////
 // This function creates the tweet that appears in the 'tweets-container'
@@ -80,9 +53,6 @@ const renderTweets = function(tweets) {
 ////////// DOCUMENT READY FUNCTION //////////
 // seperate as per tip from Vasiliy, can add in the function calls here
 $(() => {
-
-  // Call the functions
-  renderTweets(data);
   
   // Event handler prevent the default behaviour when form is submitted
   $(".tweet-form").on("submit", function (evt) {
@@ -96,7 +66,12 @@ $(() => {
 
   // Fetch tweets from the /tweets page
   const loadTweets = function() {
-
+    //ajax needs to look at the url using get
+    $.ajax({ url: "/tweets", method: "GET"})
+      // 'then' i need to pass this into the renderTweets function which I deleted above
+      .then(result => renderTweets(result));
   }
+  // Call new function right after the definition
+  loadTweets();
 
 });
