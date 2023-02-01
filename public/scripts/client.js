@@ -83,9 +83,17 @@ $(() => {
 
   // Call the functions
   renderTweets(data);
-  // Event listener prevent the default behaviour when form is submitted
-  $(".tweet-form").on("submit", (evt) => {
+  // Event handler prevent the default behaviour when form is submitted
+  $(".tweet-form").on("submit", function (evt) {
     evt.preventDefault();
+
+    // Serialize the form data
+    const formData = $(this).serialize();
+    console.log(formData);
+
+    // Send the formData to the server...
+    $.post("/tweets", formData);
+  
   });
 
 });
