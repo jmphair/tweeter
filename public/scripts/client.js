@@ -69,16 +69,12 @@ const createTweetElement = function(tweet) {
 
 ////////// RENDER TWEETS //////////
 // This function gets an array of tweet objects then loops through them and appends eachTweet to the page
-const renderTweets = function (tweets) {
+const renderTweets = function(tweets) {
   for (const tweet of tweets) {
     const eachTweet = createTweetElement(tweet);
     $("#tweets-container").append(eachTweet);
   }
 };
-
-////////// AJAX POST //////////
-
-
 
 
 ////////// DOCUMENT READY FUNCTION //////////
@@ -87,5 +83,9 @@ $(() => {
 
   // Call the functions
   renderTweets(data);
+  // Event listener prevent the default behaviour when form is submitted
+  $(".tweet-form").on("submit", (evt) => {
+    evt.preventDefault();
+  });
 
 });
