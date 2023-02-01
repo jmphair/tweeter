@@ -44,6 +44,10 @@ button {
   cursor: pointer;
 }
 
+button:hover {
+  box-shadow: 5px 5px 5px #b6b5b3ec;
+}
+
 .counter {
   font-family: 'Bungee', sans-serif;
   color: #545149;
