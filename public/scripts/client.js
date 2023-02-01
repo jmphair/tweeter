@@ -22,21 +22,21 @@ const createTweetElement = function (tweet) {
 
     <header>
       <div class="tweet-header-left">
-        <span>🦁</span>
-        <span>Queenie Phair</span>
+        <img src=${tweet.user.avatars}/>
+        <span>${tweet.user.name}</span>
       </div>
       <div class="tweet-header-right" >
-        <span>@QPhair</span>
+        <span>${tweet.user.handle}</span>
       </div>
       </header>
 
       <div class="tweet-text">
-        <p>Do or do not. There is no try.</p>
+        <p>${tweet.content.text}</p>
       </div>
 
       <footer>
       <div class="tweet-footer-left">
-        <p>Today</p>
+        <p>${tweet.created_at}</p>
       </div>
         <div class="tweet-footer-right">
           <i id="flag" class="fa-solid fa-flag"></i>
