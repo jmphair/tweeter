@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweets.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -57,7 +58,7 @@
       <section class="new-tweet-container">
         <h2>Compose Tweet</h2>
         <form action="/tweets" method="POST">
-          <div class="tweet-text">
+          <div class="new-tweet-text">
             <label for="tweet-text">What are you humming about?</label>
             <textarea name="text" id="tweet-text"></textarea>
           </div>
@@ -67,17 +68,41 @@
           </div>
         </form>
       </section>
-      <section class="tweet-container">
+      <br>
+      <br>
+      <br>
+
+      <div id="tweets-container">
+      <article class="tweet">
+
         <header>
-          <h4>Jonathan Phair</h4>
+          <div class="tweet-header-left">
+            <span>😈</span>
+            <span>Jonathan Phair</span>
+          </div>
+          <div class="tweet-header-right" >
+            <span>@JPhair</span>
+          </div>
         </header>
-        <article>
-            <img>
-        </article>
+
+          <div class="tweet-text">
+            <p>Let the wookie win.</p>
+          </div>
+
         <footer>
-          <p>10 days ago</p>
+          <div class="tweet-footer-left">
+            <p>10 days ago</p>
+          </div>
+          <div class="tweet-footer-right">
+            <i class="fa-solid fa-flag"></i>
+            <i class="fa-solid fa-retweet"></i>            
+            <i class="fa-solid fa-heart"></i>
+          </div>
         </footer>
-      </section>
+
+      </article>
+    </div>
+
     </main>
     <footer>
       <br>
