@@ -11,8 +11,9 @@ Back-end:
 Node, Express, and MongoDB.
 
 ## Screenshots
-
+Mobile Page:
 !["Screenshot of the Mobile Page"](https://github.com/jmphair/tweeter/blob/master/docs/MOBILE.png?raw=true)
+Desktop Page:
 !["Screenshot of the Desktop Page"](https://github.com/jmphair/tweeter/blob/master/docs/DESKTOP.png?raw=true)
 
 ## Getting Started
