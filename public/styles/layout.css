@@ -6,7 +6,9 @@
 html {
   box-sizing: border-box;
 }
-*, *:before, *:after {
+*, 
+*:before, 
+*:after {
   box-sizing: inherit;
 }
 
@@ -31,6 +33,7 @@ main {
   width: 90%;
   margin-left: 5%;
   margin-right: 5%;
+  margin-bottom: 10%;
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
@@ -47,7 +50,60 @@ main {
   font-size: 34px;
 }
 
-
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
+
+/* MOBILE STYLES (to account for 'tablet-sized' phones max-width increased)*/
+ @media screen and (max-width: 768px) {
+  body {
+    display: flex;
+    flex-direction: column;
+  }
+  .nav-bar {
+    background-color: transparent;
+  }
+  .new-tweet-container {
+    margin-top: 0.5em;
+  }
+ }
+
+ /* TABLET STYLES */
+ @media screen and (min-width: 768px) and (max-width: 1024px) {
+  body {
+    display: flex;
+    flex-direction: row;
+  }
+  main {
+    margin-top: 8em;
+  }
+  .avatar-header {
+    margin-top: 8em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+  }
+ }
+
+
+/* DESKTOP STYLES */
+@media screen and (min-width: 1024px){
+  body {
+    display: flex;
+    flex-direction: row;
+  }
+  main {
+    margin-top: 8em;
+  }
+  .avatar-header {
+    margin-top: 8em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+  }
+ }

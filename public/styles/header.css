@@ -1,18 +1,20 @@
 .avatar-header {
-  height: 520px;
+  height: 42vmax;
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
-  background-color: #dde4f0;
+  background-color: #abc0e3;
   background-image: url("https://www.transparenttextures.com/patterns/low-contrast-linen.png");
 }
 
 .header-text-bold {
   font-weight: bold;
+  color: #FFFFFF;
 }
 
 .header-text-light {
   font-weight: lighter;
+  color: #FFFFFF;
 }

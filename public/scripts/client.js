@@ -6,13 +6,13 @@ const secureInput = function (str) {
   return div.innerHTML;
 };
 
+
 ////////// CREATE TWEET ELEMENT //////////
 // This function creates the tweet that appears in the 'tweets-container'
 const createTweetElement = function(tweet) {
   const timePassed = timeago.format(tweet.created_at);  
   const $tweet = `
   <article class="tweet">
-
     <header>
       <div class="tweet-header-left">
         <img src=${tweet.user.avatars}/>
@@ -22,11 +22,9 @@ const createTweetElement = function(tweet) {
         <span>${tweet.user.handle}</span>
       </div>
       </header>
-
       <div class="tweet-text">
         <p>${secureInput(tweet.content.text)}</p>
       </div>
-
       <footer>
       <div class="tweet-footer-left">
         <p>${timePassed}</p>
@@ -38,7 +36,6 @@ const createTweetElement = function(tweet) {
         </div>
       </footer>
     </article>`;
-
   return $tweet;
 };
 
@@ -67,7 +64,6 @@ $(() => {
       loadTweets();
     });
   };
-
 
   // Event handler prevents the default behaviour when form is submitted
   $(".tweet-form").on("submit", function (evt) {
