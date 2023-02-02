@@ -7,6 +7,9 @@
 
 ////////// CREATE TWEET ELEMENT //////////
 // This function creates the tweet that appears in the 'tweets-container'
+
+//use the second method here
+
 const createTweetElement = function(tweet) {
   const timePassed = timeago.format(tweet.created_at);  
   const $tweet = `
@@ -46,7 +49,8 @@ const createTweetElement = function(tweet) {
 const renderTweets = function(tweets) {
   for (const tweet of tweets) {
     const eachTweet = createTweetElement(tweet);
-    $("#tweets-container").append(eachTweet);
+    // change to prepend to have the newest tweet appear first...
+    $("#tweets-container").prepend(eachTweet);
   }
 };
 
@@ -55,12 +59,20 @@ const renderTweets = function(tweets) {
 // seperate as per tip from Vasiliy, can add in the function calls here
 $(() => {
   
+  // Allows the new tweet to show up on the page without having to refresh
+  const reFetch = function(formData) {
+    $.ajax({ url: "/tweets", method: "POST", data: formData }).then(() => {
+      $("#tweets-container").empty();
+      loadTweets();
+    });
+  };
+
   // Event handler prevent the default behaviour when form is submitted
   $(".tweet-form").on("submit", function (evt) {
     evt.preventDefault();
     const formData = $(this).serialize();
     let tweetInput = $("#tweet-text").val();
-    
+
     // VALIDATION
     if (tweetInput.length === 0) {
       alert("ERROR:\nYour tweet has no content!\n(min 1 character)");
@@ -70,8 +82,8 @@ $(() => {
       alert("ERROR:\nYour tweet is too long!\n(max 140 characters)");
       return;
     }
+    reFetch(formData);
 
-    $.post("/tweets", formData);
   });
 
   // Fetch tweets from the /tweets page
