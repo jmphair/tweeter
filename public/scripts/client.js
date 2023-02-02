@@ -1,3 +1,6 @@
+////////// CLIENT SIDE JS BELOW //////////
+
+
 ////////// SECURE INPUT FUNCTION //////////
 // This function changes unsafe characters into a safe 'encoded' representation
 const secureInput = function (str) {
@@ -40,11 +43,10 @@ const createTweetElement = function(tweet) {
 };
 
 ////////// RENDER TWEETS //////////
-// This function gets an array of tweet objects then loops through them and appends eachTweet to the page
+// This function gets an array of tweet objects then loops through them and prepends eachTweet to the page
 const renderTweets = function(tweets) {
   for (const tweet of tweets) {
     const eachTweet = createTweetElement(tweet);
-    // change to prepend to have the newest tweet appear first...
     $("#tweets-container").prepend(eachTweet);
   }
 };
@@ -52,8 +54,7 @@ const renderTweets = function(tweets) {
 
 ////////// DOCUMENT READY FUNCTION //////////
 $(() => {
-  
-  // Allows the new tweet to show up on the page without having to refresh
+  // Allows each new tweet a user inputs to show up on the page without having to refresh
   const reFetch = function(formData) {
     $.ajax({ url: "/tweets", method: "POST", data: formData }).then(() => {
       $("#tweets-container").empty();
@@ -71,7 +72,7 @@ $(() => {
     const formData = $(this).serialize();
     let tweetInput = $("#tweet-text").val();
 
-    // VALIDATION
+    // Validation and Error Handling
     if (tweetInput.length === 0) {
       $(".alert")
         .empty()
@@ -87,7 +88,7 @@ $(() => {
     }
   });
 
-  // Fetch tweets from the /tweets page
+  // Fetch tweets from the '/tweets' page
   const loadTweets = function() {
     $.ajax({ url: "/tweets", method: "GET"})
       .then(result => renderTweets(result));
@@ -95,3 +96,6 @@ $(() => {
   loadTweets();
 
 });
+
+
+////////// That's all folks! Thank you for taking the time to review my code! //////////

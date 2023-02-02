@@ -12,14 +12,7 @@ html {
   box-sizing: inherit;
 }
 
-/*
- * Global layout stuff
- */
-
-/* nav .logo {
-  font-family: "Bungee";
-} */
-
+/* Global layout stuff */
 body {
   color: #545149;
   background-color: #f4f1ec;
@@ -50,10 +43,6 @@ main {
   font-size: 34px;
 }
 
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */
-
 
 /* MOBILE STYLES (to account for 'tablet-sized' phones max-width increased)*/
  @media screen and (max-width: 768px) {
@@ -65,7 +54,7 @@ main {
     background-color: transparent;
   }
   .new-tweet-container {
-    margin-top: 0.5em;
+    margin-top: 2em;
   }
  }
 
@@ -80,6 +69,7 @@ main {
   }
   .avatar-header {
     margin-top: 8em;
+    margin-left: 2.5em;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -100,6 +90,7 @@ main {
   }
   .avatar-header {
     margin-top: 8em;
+    margin-left: 2.5em;
     display: flex;
     flex-direction: column;
     justify-content: center;
