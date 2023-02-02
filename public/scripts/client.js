@@ -58,21 +58,25 @@ $(() => {
   // Event handler prevent the default behaviour when form is submitted
   $(".tweet-form").on("submit", function (evt) {
     evt.preventDefault();
-    // Serialize the form data
     const formData = $(this).serialize();
-    console.log(formData);
-    // Send the formData to the server...
+    let tweetInput = $("#tweet-text").val();
+    
+    // VALIDATION
+    if (tweetInput.length === 0) {
+      alert("Your tweet had no content!")
+    }
+    if (tweetInput.length > 140) {
+      alert("Your tweet was too long!")
+    }
+
     $.post("/tweets", formData);
   });
 
   // Fetch tweets from the /tweets page
   const loadTweets = function() {
-    //ajax needs to look at the url using get
     $.ajax({ url: "/tweets", method: "GET"})
-      // 'then' i need to pass this into the renderTweets function which I deleted above
       .then(result => renderTweets(result));
   }
-  // Call new function right after the definition
   loadTweets();
 
 });
