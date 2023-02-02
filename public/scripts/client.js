@@ -1,13 +1,4 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
-
-
-
 ////////// SECURE INPUT FUNCTION //////////
-// 'escape' is deprecated so new name
 // This function changes unsafe characters into a safe 'encoded' representation
 const secureInput = function (str) {
   let div = document.createElement("div");
@@ -63,7 +54,6 @@ const renderTweets = function(tweets) {
 
 
 ////////// DOCUMENT READY FUNCTION //////////
-// seperate as per tip from Vasiliy, can add in the function calls here
 $(() => {
   
   // Allows the new tweet to show up on the page without having to refresh
@@ -71,64 +61,34 @@ $(() => {
     $.ajax({ url: "/tweets", method: "POST", data: formData }).then(() => {
       $("#tweets-container").empty();
       $("#tweet-text").val("");
-      $(".alert").empty(); // also breaks code, these 2 things... time wasters.
+      $(".alert").empty();
       $(".counter").first().val(140);
       $('.counter').css('color', '#545149')
       loadTweets();
     });
   };
 
-  // where do I put it?!? 
-  // $('.alert').slideUp('slow');
-  // breaks my code and leaves the 140 red...
 
-  // $('#tweet-text').on('input', () => {
-  //   $('.alert').slideUp('slow');
-  // });
-
-  // Event handler prevent the default behaviour when form is submitted
+  // Event handler prevents the default behaviour when form is submitted
   $(".tweet-form").on("submit", function (evt) {
     evt.preventDefault();
     const formData = $(this).serialize();
     let tweetInput = $("#tweet-text").val();
 
     // VALIDATION
-
-    // Ask which is best practice option 1 or 2
-
-    // option 1
-    // if (tweetInput.length === 0) {
-    //   $(".alert")
-    //     .empty()
-    //     .append("<p>ERROR: you need to write more things... (min 1 character)</p>");
-    //   $('.alert').hide().slideDown('slow');
-    // } else if (tweetInput.length > 140) {
-    //   $(".alert")
-    //     .empty()
-    //     .append("<p>ERROR: you need to write... less of the things. (max 140 characters)</p>");
-    //   $('.alert').hide().slideDown('slow');
-    // } else {
-    //   reFetch(formData);
-    // }
-    
-    // option 2
     if (tweetInput.length === 0) {
       $(".alert")
         .empty()
         .append("<p>ERROR: you need to write more things... (min 1 character)</p>");
       $('.alert').hide().slideDown('slow');
-      return;
-    }
-    if (tweetInput.length > 140) {
+    } else if (tweetInput.length > 140) {
       $(".alert")
         .empty()
         .append("<p>ERROR: you need to write... less of the things. (max 140 characters)</p>");
       $('.alert').hide().slideDown('slow');
-      return;
+    } else {
+      reFetch(formData);
     }
-    
-    reFetch(formData);
-
   });
 
   // Fetch tweets from the /tweets page
