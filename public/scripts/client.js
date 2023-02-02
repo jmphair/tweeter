@@ -63,10 +63,12 @@ $(() => {
     
     // VALIDATION
     if (tweetInput.length === 0) {
-      alert("Your tweet had no content!")
+      alert("ERROR:\nYour tweet has no content!\n(min 1 character)");
+      return;
     }
     if (tweetInput.length > 140) {
-      alert("Your tweet was too long!")
+      alert("ERROR:\nYour tweet is too long!\n(max 140 characters)");
+      return;
     }
 
     $.post("/tweets", formData);
