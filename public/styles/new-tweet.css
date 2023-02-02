@@ -9,10 +9,13 @@
   justify-content: flex-start;
 }
 
-.alert {
-  color: red;
+.alert p {
   width: 100%;
   padding: 0.5em;
+  color: red;
+  border: 2px dashed red;
+  display: flex;
+  align-content: center;
 }
 
 form {

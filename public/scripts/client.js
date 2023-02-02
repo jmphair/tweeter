@@ -71,9 +71,20 @@ $(() => {
     $.ajax({ url: "/tweets", method: "POST", data: formData }).then(() => {
       $("#tweets-container").empty();
       $("#tweet-text").val("");
+      $(".alert").empty(); // also breaks code, these 2 things... time wasters.
+      $(".counter").first().val(140);
+      $('.counter').css('color', '#545149')
       loadTweets();
     });
   };
+
+  // where do I put it?!? 
+  // $('.alert').slideUp('slow');
+  // breaks my code and leaves the 140 red...
+
+  // $('#tweet-text').on('input', () => {
+  //   $('.alert').slideUp('slow');
+  // });
 
   // Event handler prevent the default behaviour when form is submitted
   $(".tweet-form").on("submit", function (evt) {
@@ -82,21 +93,40 @@ $(() => {
     let tweetInput = $("#tweet-text").val();
 
     // VALIDATION
+
+    // Ask which is best practice option 1 or 2
+
+    // option 1
+    // if (tweetInput.length === 0) {
+    //   $(".alert")
+    //     .empty()
+    //     .append("<p>ERROR: you need to write more things... (min 1 character)</p>");
+    //   $('.alert').hide().slideDown('slow');
+    // } else if (tweetInput.length > 140) {
+    //   $(".alert")
+    //     .empty()
+    //     .append("<p>ERROR: you need to write... less of the things. (max 140 characters)</p>");
+    //   $('.alert').hide().slideDown('slow');
+    // } else {
+    //   reFetch(formData);
+    // }
+    
+    // option 2
     if (tweetInput.length === 0) {
       $(".alert")
         .empty()
         .append("<p>ERROR: you need to write more things... (min 1 character)</p>");
       $('.alert').hide().slideDown('slow');
+      return;
     }
     if (tweetInput.length > 140) {
       $(".alert")
         .empty()
         .append("<p>ERROR: you need to write... less of the things. (max 140 characters)</p>");
       $('.alert').hide().slideDown('slow');
+      return;
     }
-    else if (tweetInput.length >= 1) {
-      $('.alert').slideUp('slow');
-    }
+    
     reFetch(formData);
 
   });
