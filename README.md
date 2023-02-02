@@ -12,8 +12,8 @@ Node, Express, and MongoDB.
 
 ## Screenshots
 
-!["Screenshot of the Mobile Page"] (https://github.com/jmphair/tweeter/blob/master/docs/MOBILE.png?raw=true)
-!["Screenshot of the Desktop Page"] (https://github.com/jmphair/tweeter/blob/master/docs/DESKTOP.png?raw=true)
+!["Screenshot of the Mobile Page"](https://github.com/jmphair/tweeter/blob/master/docs/MOBILE.png?raw=true)
+!["Screenshot of the Desktop Page"](https://github.com/jmphair/tweeter/blob/master/docs/DESKTOP.png?raw=true)
 
 ## Getting Started
 
