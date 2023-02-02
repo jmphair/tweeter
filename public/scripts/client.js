@@ -63,6 +63,7 @@ $(() => {
   const reFetch = function(formData) {
     $.ajax({ url: "/tweets", method: "POST", data: formData }).then(() => {
       $("#tweets-container").empty();
+      $("#tweet-text").val("");
       loadTweets();
     });
   };
