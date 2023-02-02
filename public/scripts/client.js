@@ -83,12 +83,19 @@ $(() => {
 
     // VALIDATION
     if (tweetInput.length === 0) {
-      alert("ERROR:\nYour tweet has no content!\n(min 1 character)");
-      return;
+      $(".alert")
+        .empty()
+        .append("<p>ERROR: you need to write more things... (min 1 character)</p>");
+      $('.alert').hide().slideDown('slow');
     }
     if (tweetInput.length > 140) {
-      alert("ERROR:\nYour tweet is too long!\n(max 140 characters)");
-      return;
+      $(".alert")
+        .empty()
+        .append("<p>ERROR: you need to write... less of the things. (max 140 characters)</p>");
+      $('.alert').hide().slideDown('slow');
+    }
+    else if (tweetInput.length >= 1) {
+      $('.alert').slideUp('slow');
     }
     reFetch(formData);
 

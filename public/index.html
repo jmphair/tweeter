@@ -57,7 +57,10 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet-container">
-        <h2>Compose Tweet</h2>
+        
+        <!-- Errors -->
+        <div class="alert"></div>
+
         <form class="tweet-form" action="/tweets" method="POST">
           <div class="new-tweet-text">
             <label for="tweet-text">What are you humming about?</label>
@@ -71,10 +74,7 @@
       </section>
       <br>
       <br>
-      <br>
-
       <div id="tweets-container"></div>
-
     </main>
     <footer>
       <br>
