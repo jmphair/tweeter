@@ -5,11 +5,18 @@
  */
 
 
+
+////////// SECURE INPUT FUNCTION //////////
+// 'escape' is deprecated so new name
+// This function changes unsafe characters into a safe 'encoded' representation
+const secureInput = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
+
 ////////// CREATE TWEET ELEMENT //////////
 // This function creates the tweet that appears in the 'tweets-container'
-
-//use the second method here
-
 const createTweetElement = function(tweet) {
   const timePassed = timeago.format(tweet.created_at);  
   const $tweet = `
@@ -26,7 +33,7 @@ const createTweetElement = function(tweet) {
       </header>
 
       <div class="tweet-text">
-        <p>${tweet.content.text}</p>
+        <p>${secureInput(tweet.content.text)}</p>
       </div>
 
       <footer>
